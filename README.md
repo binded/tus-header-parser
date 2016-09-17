@@ -33,6 +33,16 @@ import tusParser from 'tus-header-parser'
 // ...
 app.use(tusParser())
 app.use((req, res, next) => {
+  console.log(req.headers)
+  // {
+  //   'tus-resumable': '1.0.0',
+  //   'upload-offset': '1000',
+  //   'upload-defer-length': '1',
+  //   'upload-length': '1337',
+  //   'upload-metadata': 'filename d29ybGRfZG9taW5hdGlvbl9wbGFuLnBkZg==,foo YmFy',
+  //   'upload-checksum': 'sha Kq5sNclPz7QV2+lfQIuc6R7oRu0=',
+  //   'upload-concat': 'final;/files/a /files/b',
+  // }
   console.log(req.tus)
   // Map {
   //   'tusResumable' => '1.0.0',
