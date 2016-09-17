@@ -1,3 +1,4 @@
+import toObject from 'to-object-reducer'
 import { decode as decodeMetadata } from 'tus-metadata'
 
 // TODO: Buffer.from silently ignores invalid bytes :(
@@ -89,16 +90,16 @@ const camelCase = {
   'upload-concat': 'uploadConcat',
 }
 
-export const parseHeaders = (headers) => {
-  const map = new Map()
+export const parseHeaders = (headers) => (
   Object
     .keys(headers)
     .filter(headerName => knownHeaders.includes(headerName))
-    .forEach(headerName => {
-      map.set(camelCase[headerName], parsers[headerName](headers[headerName]))
-    })
-  return map
-}
+    .map(headerName => ([
+      camelCase[headerName],
+      parsers[headerName](headers[headerName]),
+    ]))
+    .reduce(toObject, {})
+)
 
 export default () => (req, res, next) => {
   req.tus = parseHeaders(req.headers)

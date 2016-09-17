@@ -60,6 +60,7 @@
     }
   },
   "dependencies": {
+    "to-object-reducer": "^1.0.1",
     "tus-metadata": "^1.0.2"
   }
 }

@@ -149,22 +149,24 @@ test('initTusParser', (t) => {
   }
   const res = {}
   parser(req, res, () => {
-    // console.log(req.tus.entries())
-    t.deepEqual(Array.from(req.tus.entries()), [
-      ['tusResumable', '1.0.0'],
-      ['uploadOffset', 1000],
-      ['uploadDeferLength', 1],
-      ['uploadLength', 1337],
-      ['uploadMetadata', { filename: 'world_domination_plan.pdf', foo: 'bar' }],
-      [
-        'uploadChecksum',
-        { algorithm: 'sha', checksum: Buffer.from('Kq5sNclPz7QV2+lfQIuc6R7oRu0=', 'base64') },
-      ],
-      [
-        'uploadConcat',
-        { final: true, urls: ['/files/a', '/files/b'] },
-      ],
-    ])
+    t.deepEqual(req.tus, {
+      tusResumable: '1.0.0',
+      uploadOffset: 1000,
+      uploadDeferLength: 1,
+      uploadLength: 1337,
+      uploadMetadata: {
+        filename: 'world_domination_plan.pdf',
+        foo: 'bar',
+      },
+      uploadChecksum: {
+        algorithm: 'sha',
+        checksum: Buffer.from('Kq5sNclPz7QV2+lfQIuc6R7oRu0=', 'base64'),
+      },
+      uploadConcat: {
+        final: true,
+        urls: ['/files/a', '/files/b'],
+      },
+    })
     t.end()
   })
 })
