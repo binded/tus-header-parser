@@ -20,7 +20,14 @@
     "type": "git",
     "url": "git+https://github.com/blockai/tus-header-parser.git"
   },
-  "keywords": ["tusboy", "tus", "header", "parser", "upload", "resumable"],
+  "keywords": [
+    "tusboy",
+    "tus",
+    "header",
+    "parser",
+    "upload",
+    "resumable"
+  ],
   "author": "Oli Lalonde <olalonde@gmail.com> (https://syskall.com/)",
   "license": "MIT",
   "bugs": {
@@ -53,6 +60,6 @@
     }
   },
   "dependencies": {
-    "tus-metadata": "^1.0.1"
+    "tus-metadata": "^1.0.2"
   }
 }
