@@ -1,6 +1,6 @@
 {
   "name": "tus-header-parser",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Express middleware that parses Tus headers and sets them inside a Map on req.tus",
   "main": "./lib/index.js",
   "directories": {

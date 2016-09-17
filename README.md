@@ -53,7 +53,7 @@ app.use((req, res, next) => {
   //   },
   //   uploadChecksum: {
   //     algorithm: 'sha',
-  //     checksum: Buffer.from('Kq5sNclPz7QV2+lfQIuc6R7oRu0=', 'base64'),
+  //     checksum: <Buffer 2a ae 6c 35 c9 4f cf b4 15 db e9 5f 40 8b 9c e9 1e e8 46 ed>,
   //   },
   //   uploadConcat: {
   //     final: true,
