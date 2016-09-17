@@ -51,5 +51,8 @@
     "commitizen": {
       "path": "cz-conventional-changelog"
     }
+  },
+  "dependencies": {
+    "tus-metadata": "^1.0.1"
   }
 }
