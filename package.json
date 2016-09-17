@@ -1,7 +1,7 @@
 {
   "name": "tus-header-parser",
   "version": "1.0.0",
-  "description": "",
+  "description": "Express middleware that parses Tus headers and sets them inside a Map on req.tus",
   "main": "./lib/index.js",
   "directories": {
     "test": "test"
@@ -20,7 +20,7 @@
     "type": "git",
     "url": "git+https://github.com/blockai/tus-header-parser.git"
   },
-  "keywords": [],
+  "keywords": ["tusboy", "tus", "header", "parser", "upload", "resumable"],
   "author": "Oli Lalonde <olalonde@gmail.com> (https://syskall.com/)",
   "license": "MIT",
   "bugs": {
